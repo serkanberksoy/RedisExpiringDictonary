@@ -32,3 +32,14 @@ var testObj = dic.Get(id.ToString())
 // REMOVE
 dic.Remove(id.ToString());
 ```
+
+#### Constructor
+```csharp
+public RedisExpiringDictionary(ConfigurationOptions redisOptions, int collectionIndex, TimeSpan cacheDuration, bool isExpiring = true, bool isSliding = true)
+
+```
+- redisOptions : StackExchange.Redis.ConfigurationOptions
+- collectionIndex: Index of the Redis db
+- cacheDuration: Cache expiration duration in timespan format
+- isExpiring: Expiring/Permanent cache
+- isSliding: Slide the cache on get requests
